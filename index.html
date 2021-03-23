@@ -1,0 +1,27 @@
+<!-- VIEW -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="ToDoList">
+    <div ng-controller="MainController">
+      <!-- <li>{{list[0]}}</li>
+        <li>{{list[1]}}</li>
+        <li>{{list[2]}}</li> -->
+
+      <div ng-repeat="item in list track by $index">
+        <!-- dy default ng-repeat does not add duplicate so we have to add the following line -->
+        <!-- track by $index -->
+        <li>{{item}}</li>
+      </div>
+      <input ng-model="addToDo" />
+      <button ng-click="addItem()">ADD</button>
+    </div>
+
+    <!-- modules -->
+    <script src="app.js"></script>
+    <!-- controllers     -->
+    <script src="./controllers/MainController.js"></script>
+  </body>
+</html>
